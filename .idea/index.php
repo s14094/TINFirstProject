@@ -16,11 +16,13 @@
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
-
 <body>
-<header id="pageHeader">Header</header>
+<header id="pageHeader"></header>
+<div class="header-cont">
+	<div>ddasf</div>
+</div>
 <article id="mainArticle">Article</article>
 <nav id="mainNav">Nav</nav>
-<div id="siteAds">Ads</div>
+<div class="ads" id="siteAds">Ads</div>
 <footer id="pageFooter">Footer</footer>
 </body>
