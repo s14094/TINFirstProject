@@ -18,9 +18,9 @@
 
 <body>
 <header id="pageHeader"></header>
-<div class="header-cont">
-	<div>ddasf</div>
-</div>
+
+<?php include 'header.php'; ?>
+
 <article id="mainArticle">Article</article>
 <nav id="mainNav">Nav</nav>
 <div class="ads" id="siteAds">Ads</div>
