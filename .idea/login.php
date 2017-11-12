@@ -26,9 +26,11 @@
 <form method="post" action="index.html">
     <div class="box">
 
-        <input type="email" placeholder="nick" class="email" />
+        <h1>LOGOWANIE</h1>
 
-        <input type="password" placeholder="haslo" class="email" />
+        <input type="text" placeholder="nick" class="email" />
+
+        <input type="password" placeholder="hasło" class="email" />
 
         <a href="#"><div class="btn">Zaloguj</div></a>
 

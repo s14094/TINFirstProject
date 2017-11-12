@@ -22,7 +22,7 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="login.php">Zaloguj</a>
-    <a href="#">Zarejestruj</a>
+    <a href="register.php">Zarejestruj</a>
 </div>
 
 <div class="header-cont">
