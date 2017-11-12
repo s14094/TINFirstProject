@@ -21,14 +21,14 @@
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Zaloguj</a>
+    <a href="login.php">Zaloguj</a>
     <a href="#">Zarejestruj</a>
 </div>
 
 <div class="header-cont">
 
     <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
+        <a href="index.php" class="active">Home</a>
         <a href="#movies">Filmy</a>
         <a href="#series">Seriale</a>
         <a id="loginButton"  onclick="openNav()"><i class="material-icons" style="font-size:16px">person</i></a>
@@ -46,7 +46,7 @@
             }
         }
         function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("mySidenav").style.width = "150px";
         }
 
         function closeNav() {
