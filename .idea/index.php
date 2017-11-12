@@ -11,9 +11,9 @@
 
 <html>
 <head>
-    <title>Movies & Series</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="index.css">
+	<title>Movies & Series</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
 <body>

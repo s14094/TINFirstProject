@@ -12,34 +12,36 @@
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="login.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="login.css">
 </head>
 
 <body>
 
 <?php include 'header.php'; ?>
 
-
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
 <form method="post" action="index.html">
-    <div class="box">
+	<div class="box">
 
-        <h1>LOGOWANIE</h1>
+		<h1>LOGOWANIE</h1>
 
-        <input type="text" placeholder="nick" class="email" />
+		<input type="text" placeholder="nick" class="email"/>
 
-        <input type="password" placeholder="hasło" class="email" />
+		<input type="password" placeholder="hasło" class="email"/>
 
-        <a href="#"><div class="btn">Zaloguj</div></a>
+		<a href="#">
+			<div class="btn">Zaloguj</div>
+		</a>
 
-        <a href="register.php"><div id="btn2">Rejestracja</div></a>
+		<a href="register.php">
+			<div id="btn2">Rejestracja</div>
+		</a>
 
-    </div>
+	</div>
 
 </form>
-
 </body>
 </html>
 

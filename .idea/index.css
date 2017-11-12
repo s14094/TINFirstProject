@@ -8,10 +8,10 @@ body {
 	height: 100vh;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-	width:100%;
-	text-align:center;
+	width: 100%;
+	text-align: center;
 	margin: 20px 0px 20px 0px;
-
+	
 }
 
 header {
@@ -30,7 +30,7 @@ article {
 
 nav {
 	padding: 1.2em;
-
+	
 }
 
 .ads {
@@ -43,7 +43,6 @@ nav {
 #pageHeader {
 	grid-area: header;
 }
-
 
 .content {
 	width: 960px;
