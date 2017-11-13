@@ -7,13 +7,12 @@
  */
 ?>
 
-
 <!DOCTYPE html>
 <html>
 
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="login.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 
 <body>
@@ -22,24 +21,21 @@
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
-<form method="post" action="index.html">
-	<div class="box">
+<form method="post" action="loginIn.php">
+    <div class="box">
 
-		<h1>LOGOWANIE</h1>
+        <h1>LOGOWANIE</h1>
 
-		<input type="text" placeholder="nick" class="email"/>
+        <input type="text" placeholder="nick" name="userNickname" class="email"/>
 
-		<input type="password" placeholder="hasło" class="email"/>
+        <input type="password" placeholder="hasło" name="userPassword" class="email"/>
 
-		<a href="#">
-			<div class="btn">Zaloguj</div>
-		</a>
+        <input class="btn" value="Zaloguj" type="submit"></input>
 
-		<a href="register.php">
-			<div id="btn2">Rejestracja</div>
-		</a>
-
-	</div>
+        <a href="register.php">
+            <div id="btn2">Rejestracja</div>
+        </a>
+    </div>
 
 </form>
 </body>
