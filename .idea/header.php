@@ -5,12 +5,9 @@
  * Date: 12/11/2017
  * Time: 18:50
  */
-?>
-
-
-<?php
 session_start();
 ?>
+
 
 <!doctype html>
 
@@ -27,7 +24,8 @@ session_start();
 <div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	<a href="login.php">Zaloguj</a>
-	<a href="register.php">Zarejestruj</a>
+	<a href="testregister.php">Zarejestruj</a>
+	<a href="logout.php">Wyloguj</a>
 </div>
 
 <div class="header-cont">
@@ -36,7 +34,22 @@ session_start();
 		<a href="index.php" class="active">Home</a>
 		<a href="#movies">Filmy</a>
 		<a href="#series">Seriale</a>
-		<?php echo $login_session; ?>
+		<a href="login.php">
+		<?php
+        if ($_SESSION['logged'] == 1) {
+            echo $_SESSION['login_user'];
+
+        } elseif ($_SESSION['logged'] == 0)
+            echo '<span>Niezalogowano</span>';
+        else{
+            echo 'error';
+        }
+        ?>
+			</a>
+		<a><?php
+            print_r($_SESSION);
+            ?>
+		</a>
 		<a id="loginButton" onclick="openNav()"><i class="material-icons" style="font-size:16px">person</i></a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>

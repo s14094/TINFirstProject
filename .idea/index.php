@@ -5,6 +5,8 @@
  * Date: 08/11/2017
  * Time: 15:31
  */
+
+session_start();
 ?>
 
 
@@ -25,11 +27,11 @@
 
 <article id="mainArticle">Article</article>
 <nav id="mainNav">Nav
-	<?php
+    <?php
 
-	echo "witaj ".$userNickname."!"
+    echo "witaj " . $userNickname . "!"
 
-	?>
+    ?>
 </nav>
 <div class="ads" id="siteAds">Ads</div>
 <footer id="pageFooter">Footer</footer>
