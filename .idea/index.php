@@ -7,12 +7,14 @@
  */
 ?>
 
+
 <!doctype html>
 
 <html>
 <head>
 	<title>Movies & Series</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="Location" content="index; text/html; charset=utf-8">
+
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
 
@@ -22,7 +24,13 @@
 <?php include 'header.php'; ?>
 
 <article id="mainArticle">Article</article>
-<nav id="mainNav">Nav</nav>
+<nav id="mainNav">Nav
+	<?php
+
+	echo "witaj ".$userNickname."!"
+
+	?>
+</nav>
 <div class="ads" id="siteAds">Ads</div>
 <footer id="pageFooter">Footer</footer>
 </body>

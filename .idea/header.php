@@ -7,6 +7,11 @@
  */
 ?>
 
+
+<?php
+session_start();
+?>
+
 <!doctype html>
 
 <html>
@@ -31,6 +36,7 @@
 		<a href="index.php" class="active">Home</a>
 		<a href="#movies">Filmy</a>
 		<a href="#series">Seriale</a>
+		<?php echo $login_session; ?>
 		<a id="loginButton" onclick="openNav()"><i class="material-icons" style="font-size:16px">person</i></a>
 		<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 	</div>
