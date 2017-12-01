@@ -14,6 +14,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
+
+    //need fix
+    $hash = password_hash('haslo', PASSWORD_DEFAULT);
+    $verify=password_verify($_POST["password"], $hash);
+
+
     $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$mypassword'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -34,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } else {
         $_SESSION['logged'] = false;
-        $error = "Niepoprawny Login lub Hasło.";
+        $error = "Niepoprawny Login lub Hasło. '$verify' ";
     }
 }
 ?>

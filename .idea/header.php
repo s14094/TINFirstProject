@@ -24,7 +24,7 @@ session_start();
 <div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	<a href="login.php">Zaloguj</a>
-	<a href="testregister.php">Zarejestruj</a>
+	<a href="register.php">Zarejestruj</a>
 	<a href="logout.php">Wyloguj</a>
 </div>
 
