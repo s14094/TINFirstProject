@@ -32,8 +32,8 @@ session_start();
 
 	<div class="topnav" id="myTopnav">
 		<a href="index.php" class="active">Home</a>
-		<a href="#movies">Filmy</a>
-		<a href="#series">Seriale</a>
+		<a href="movies.php">Filmy</a>
+		<a href="series.php">Seriale</a>
 		<a href="login.php">
 		<?php
         if ($_SESSION['logged'] == 1) {

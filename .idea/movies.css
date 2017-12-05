@@ -1,0 +1,93 @@
+.clear {
+	clear: both;
+	line-height: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 0px;
+	height: 0px;
+}
+
+body {
+	padding-top: 75px;
+	background: #fff;
+	font: 11px;
+	color: #333;
+	font-family: 11px 'Open Sans', sans-serif;
+	background: #3498db;
+}
+
+.listing {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.listing li {
+	display: block;
+	padding: 10px;
+	margin-bottom: 8px;
+	background: white;
+	border-radius: 6px;
+	border: black 4px solid;
+}
+
+.listing .listinfo {
+	width: 100%;
+	float: left;
+	
+}
+
+.listinfo .listingimage {
+	display: block;
+	float: left;
+	border: 5px solid #a5a192;
+	margin-right: 15px;
+}
+
+
+.price {
+	display: block;
+	font-weight: bold;
+	color: #0099CC;
+}
+
+a {
+	color: #3498db;
+}
+
+a:hover, a:focus, a:active {
+	text-decoration: none;
+	color:           #222;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+	color: white;
+	font-size: 50px;
+}
+
+h1 a, h2 a, h3 a {
+	text-decoration: none;
+	font-size:   32px;
+	text-align:  center;
+	font-weight: 700;
+}
+
+h3 a:hover {
+	color: #000000;
+}
+
+p {
+	margin:  0 0 10px;
+	padding: 0;
+}
+
+hr {
+	clear:      both;
+	margin:     25px 0;
+	border:     1px #000 solid;
+	height:     1px;
+	background: #FFF;
+}
+
