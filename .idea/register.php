@@ -104,7 +104,7 @@ if (isset($_POST['email'])) {
             if ($wszystko_OK == true) {
 
                 //if ($polaczenie->query("INSERT INTO users VALUES (NULL, '$nick', '$haslo_hash', '$email', 1)")) {
-                if ($polaczenie->query("INSERT INTO users (id, username, password, email, accounttype) VALUES (1, '$nick', '$haslo_hash', '$email', 1)")) {
+                if ($polaczenie->query("INSERT INTO users (username, password, email, accounttype) VALUES ('$nick', '$haslo_hash', '$email', 1)")) {
                     $_SESSION['udanarejestracja'] = true;
                     header('Location: index.php');
                 } else {
