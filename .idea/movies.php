@@ -20,32 +20,47 @@ include_once 'imdb.class.php';
 	<h1>FILMY</h1>
 	<ul class="listing">
 
-		<li style="height: 100px;">
-			<div class="listinfo">
 
-                <?php
-                // Check connection
-                if ($db->connect_error) {
-                    die("Connection failed: " . $db->connect_error);
-                }
+        <?php
+        // Check connection
+        if ($db->connect_error) {
+            die("Connection failed: " . $db->connect_error);
+        }
 
-                $sql = "SELECT movieid, moviename, userid FROM testmovies";
-                $result = $db->query($sql);
+        $sql = "SELECT movieid, moviename, userid FROM testmovies";
+        $result = $db->query($sql);
 
-                if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                        echo "id: " . $row["movieid"]. " - Name: " . $row["moviename"]. " " . $row["userid"]. "<br>";
-                    }
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+
+
+                //echo "id: " . $row["movieid"] . " - Name: " . $row["moviename"] . " " . $row["userid"] . "<br>";
+
+                echo '<li><div class="listinfo">';
+                $oIMDB = new IMDB($row["moviename"]);
+                if ($oIMDB->isReady) {
+                    echo '<p><img src="' . $oIMDB->getPoster('small', true) . '" class="listingimage"></p>';
+                    echo '<p><h3><b>#' . $row["movieid"] . ' <a href="' . $oIMDB->getUrl() . '">' . $oIMDB->getTitle() . '</a></b></h3></p>';
+                    echo '<section class="customInline"><p>Country: <b>' . $oIMDB->getCountry() . '</b></p>';
+                    echo '<p>Director: <b>' . $oIMDB->getDirector() . '</b></p>';
+                    echo '<p>Genre: <b>' . $oIMDB->getGenre() . '</b></p></section>';
+                    echo '<section class="customInline customFloat"><p>Rating: <b>' . $oIMDB->getRating() . '</b></p>';
+                    echo '<p>Votes: <b>' . $oIMDB->getVotes() . '</b></p>';
+                    echo '<p>Year: <b>' . $oIMDB->getYear() . '</b></p></section>';
+                    echo '<p>Plot: <b>' . $oIMDB->getPlot($iLimit = 200) . '</b></p>';
                 } else {
-                    echo "0 results";
+                    echo '<p>Movie not found!</p>';
                 }
-                $db->close();
-                ?>
 
-			</div>
-			<div class="clear">&nbsp;</div>
-		</li>
+                echo '</div><div class="clear">&nbsp;</div></li>';
+
+            }
+        } else {
+            echo "0 results";
+        }
+        $db->close();
+        ?>
 
 
 		<li>
