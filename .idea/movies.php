@@ -9,15 +9,45 @@
 <body>
 
 
-<?php include 'header.php'; ?>
-
 <?php
+session_start();
+include("config.php");
+include 'header.php';
 include_once 'imdb.class.php';
 ?>
 
 <div id="main">
 	<h1>FILMY</h1>
 	<ul class="listing">
+
+		<li style="height: 100px;">
+			<div class="listinfo">
+
+                <?php
+                // Check connection
+                if ($db->connect_error) {
+                    die("Connection failed: " . $db->connect_error);
+                }
+
+                $sql = "SELECT movieid, moviename, userid FROM testmovies";
+                $result = $db->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "id: " . $row["movieid"]. " - Name: " . $row["moviename"]. " " . $row["userid"]. "<br>";
+                    }
+                } else {
+                    echo "0 results";
+                }
+                $db->close();
+                ?>
+
+			</div>
+			<div class="clear">&nbsp;</div>
+		</li>
+
+
 		<li>
 			<div class="listinfo">
                 <?php
