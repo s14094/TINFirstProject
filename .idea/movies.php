@@ -18,8 +18,65 @@ include_once 'imdb.class.php';
 
 <div id="main">
 	<h1>FILMY</h1>
-	<ul class="listing">
+	<div class="btn">
+		<a href='#' id="myBtn">+</a>
+	</div>
 
+	<div id="myModal" class="modal">
+
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>Some text in the Modal..</p>
+		</div>
+	</div>
+
+	<script>
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+	</script>
+
+	<div class="btn2">
+		<a href='#' id="myBtn2">-</a>
+	</div>
+
+	<div id="myModal2" class="modal2">
+		<div class="modal-content2">
+			<span class="close2">&times;</span>
+			<p>Some text in the Modal.. 22222</p>
+		</div>
+	</div>
+
+	<script>
+        var modal2 = document.getElementById('myModal2');
+        var btn2 = document.getElementById("myBtn2");
+        var span2 = document.getElementsByClassName("close2")[0];
+
+        btn2.onclick = function() {
+            modal2.style.display = "block";
+        }
+
+        span2.onclick = function() {
+            modal2.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal || event.target == modal2) {
+                modal.style.display = "none";
+                modal2.style.display = "none";
+            }
+        }
+	</script>
+
+	<ul class="listing">
 
         <?php
         // Check connection
@@ -153,6 +210,9 @@ include_once 'imdb.class.php';
 			<div class="clear">&nbsp;</div>
 		</li>
 	</ul>
+
+
+
 </div>
 </body>
 </html>
