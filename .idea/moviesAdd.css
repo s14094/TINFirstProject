@@ -1,0 +1,26 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #3498db;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+}
+
+.btn {
+	text-align: center;
+	background: #2ecc71;
+	width: 125px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	border-radius: 4px;
+	border: #27ae60 1px solid;
+	margin:15px auto;
+	display:block;
+	font-weight: 800;
+	font-size: 0.8em;
+}
+
+.btn:hover {
+	background: #2CC06B;
+}

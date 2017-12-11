@@ -24,9 +24,23 @@ include_once 'imdb.class.php';
 
 	<div id="myModal" class="modal">
 
+		<!-- dodaj film!-->
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<p>Some text in the Modal..</p>
+			<p>Some text in the Modal..
+
+
+			<form action="moviesAdd.php" method="post">
+
+				<h1>DODAJ FILM</h1>
+
+				<input type="text" placeholder="Link from idbm or correct name" name="moviename"/>
+
+				<input class="btn" value="Dodaj" type="submit"/>
+
+			</form>
+
+			</p>
 		</div>
 	</div>
 
@@ -35,11 +49,11 @@ include_once 'imdb.class.php';
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];
 
-        btn.onclick = function() {
+        btn.onclick = function () {
             modal.style.display = "block";
         }
 
-        span.onclick = function() {
+        span.onclick = function () {
             modal.style.display = "none";
         }
 	</script>
@@ -48,10 +62,14 @@ include_once 'imdb.class.php';
 		<a href='#' id="myBtn2">-</a>
 	</div>
 
-	<div id="myModal2" class="modal2">
+	<!-- usun film !-->
+	<div id="myModal2" class="modal">
 		<div class="modal-content2">
 			<span class="close2">&times;</span>
-			<p>Some text in the Modal.. 22222</p>
+			<p>Some text in the Modal.. 22222
+
+
+			</p>
 		</div>
 	</div>
 
@@ -60,15 +78,15 @@ include_once 'imdb.class.php';
         var btn2 = document.getElementById("myBtn2");
         var span2 = document.getElementsByClassName("close2")[0];
 
-        btn2.onclick = function() {
+        btn2.onclick = function () {
             modal2.style.display = "block";
         }
 
-        span2.onclick = function() {
+        span2.onclick = function () {
             modal2.style.display = "none";
         }
 
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal || event.target == modal2) {
                 modal.style.display = "none";
                 modal2.style.display = "none";
@@ -116,101 +134,9 @@ include_once 'imdb.class.php';
         } else {
             echo "0 results";
         }
-        $db->close();
+        //$db->close();
         ?>
-
-
-		<li>
-			<div class="listinfo">
-                <?php
-                $oIMDB = new IMDB('New York, I Love You');
-                if ($oIMDB->isReady) {
-                    echo '<p><img src="' . $oIMDB->getPoster('small', true) . '" class="listingimage"></p>';
-                    echo '<p><h3><b><a href="' . $oIMDB->getUrl() . '">' . $oIMDB->getTitle() . '</a></b></h3></p>';
-                    echo '<section class="customInline"><p>Country: <b>' . $oIMDB->getCountry() . '</b></p>';
-                    echo '<p>Director: <b>' . $oIMDB->getDirector() . '</b></p>';
-                    echo '<p>Genre: <b>' . $oIMDB->getGenre() . '</b></p></section>';
-                    echo '<section class="customInline customFloat"><p>Rating: <b>' . $oIMDB->getRating() . '</b></p>';
-                    echo '<p>Votes: <b>' . $oIMDB->getVotes() . '</b></p>';
-                    echo '<p>Year: <b>' . $oIMDB->getYear() . '</b></p></section>';
-                    echo '<p>Plot: <b>' . $oIMDB->getPlot($iLimit = 200) . '</b></p>';
-                } else {
-                    echo '<p>Movie not found!</p>';
-                }
-                ?>
-			</div>
-			<div class="clear">&nbsp;</div>
-		</li>
-
-		<li>
-			<div class="listinfo">
-                <?php
-                $oIMDB = new IMDB('New Yorkdsadssa');
-                if ($oIMDB->isReady) {
-                    echo '<p><img src="' . $oIMDB->getPoster('small', true) . '" class="listingimage"></p>';
-                    echo '<p><h3><b><a href="' . $oIMDB->getUrl() . '">' . $oIMDB->getTitle() . '</a></b></h3></p>';
-                    echo '<section class="customInline"><p>Country: <b>' . $oIMDB->getCountry() . '</b></p>';
-                    echo '<p>Director: <b>' . $oIMDB->getDirector() . '</b></p>';
-                    echo '<p>Genre: <b>' . $oIMDB->getGenre() . '</b></p></section>';
-                    echo '<section class="customInline customFloat"><p>Rating: <b>' . $oIMDB->getRating() . '</b></p>';
-                    echo '<p>Votes: <b>' . $oIMDB->getVotes() . '</b></p>';
-                    echo '<p>Year: <b>' . $oIMDB->getYear() . '</b></p></section>';
-                    echo '<p>Plot: <b>' . $oIMDB->getPlot($iLimit = 200) . '</b></p>';
-                } else {
-                    echo '<p>Movie not found!</p>';
-                }
-                ?>
-			</div>
-			<div class="clear">&nbsp;</div>
-		</li>
-
-
-		<li>
-			<div class="listinfo">
-                <?php
-                $oIMDB = new IMDB('The Godfather');
-                if ($oIMDB->isReady) {
-                    echo '<p><img src="' . $oIMDB->getPoster('small', true) . '" class="listingimage"></p>';
-                    echo '<p><h3><b><a href="' . $oIMDB->getUrl() . '">' . $oIMDB->getTitle() . '</a></b></h3></p>';
-                    echo '<section class="customInline"><p>Country: <b>' . $oIMDB->getCountry() . '</b></p>';
-                    echo '<p>Director: <b>' . $oIMDB->getDirector() . '</b></p>';
-                    echo '<p>Genre: <b>' . $oIMDB->getGenre() . '</b></p></section>';
-                    echo '<section class="customInline customFloat"><p>Rating: <b>' . $oIMDB->getRating() . '</b></p>';
-                    echo '<p>Votes: <b>' . $oIMDB->getVotes() . '</b></p>';
-                    echo '<p>Year: <b>' . $oIMDB->getYear() . '</b></p></section>';
-                    echo '<p>Plot: <b>' . $oIMDB->getPlot($iLimit = 200) . '</b></p>';
-                } else {
-                    echo '<p>Movie not found!</p>';
-                }
-                ?>
-			</div>
-			<div class="clear">&nbsp;</div>
-		</li>
-
-
-		<li>
-			<div class="listinfo">
-                <?php
-                $oIMDB = new IMDB('http://www.imdb.com/title/tt0209144/?ref_=nv_sr_1');
-                if ($oIMDB->isReady) {
-                    echo '<p><img src="' . $oIMDB->getPoster('small', true) . '" class="listingimage"></p>';
-                    echo '<p><h3><b><a href="' . $oIMDB->getUrl() . '">' . $oIMDB->getTitle() . '</a></b></h3></p>';
-                    echo '<section class="customInline"><p>Country: <b>' . $oIMDB->getCountry() . '</b></p>';
-                    echo '<p>Director: <b>' . $oIMDB->getDirector() . '</b></p>';
-                    echo '<p>Genre: <b>' . $oIMDB->getGenre() . '</b></p></section>';
-                    echo '<section class="customInline customFloat"><p>Rating: <b>' . $oIMDB->getRating() . '</b></p>';
-                    echo '<p>Votes: <b>' . $oIMDB->getVotes() . '</b></p>';
-                    echo '<p>Year: <b>' . $oIMDB->getYear() . '</b></p></section>';
-                    echo '<p>Plot: <b>' . $oIMDB->getPlot($iLimit = 200) . '</b></p>';
-                } else {
-                    echo '<p>Movie not found!</p>';
-                }
-                ?>
-			</div>
-			<div class="clear">&nbsp;</div>
-		</li>
 	</ul>
-
 
 
 </div>
