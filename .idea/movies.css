@@ -33,7 +33,6 @@ body {
 .listing .listinfo {
 	width: 100%;
 	float: left;
-	
 }
 
 .listinfo .listingimage {
@@ -158,6 +157,8 @@ hr {
 	
 }
 
+
+
 .btn2 a:hover {
 	background: #fff;
 	color: #3498db;
@@ -181,7 +182,7 @@ hr {
 	background-color: #fefefe;
 	margin: 15% auto;
 	padding: 20px;
-	width: 80%;
+	width: 40%;
 	border-radius: 6px;
 	border: black 4px solid;
 }
@@ -223,4 +224,42 @@ hr {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+
+.btn3 {
+	text-align: center;
+	background: #fff;
+	width: 125px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #3498db;
+	border-radius: 6px;
+	border: black 4px solid;
+	margin:15px auto;
+	display:block;
+	font-weight: 800;
+	font-size: 0.8em;
+}
+
+.btn3:hover {
+	color: white;
+	background: #3498db;
+}
+
+.email {
+	padding: 8px;
+	width: 250px;
+	color: black;
+	margin:15px auto;
+	font-size: 1em;
+	border-radius: 4px;
+}
+
+h2 {
+	width: 100%;
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+	color: black;
+	font-size: 30px;
 }

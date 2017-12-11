@@ -27,20 +27,17 @@ include_once 'imdb.class.php';
 		<!-- dodaj film!-->
 		<div class="modal-content">
 			<span class="close">&times;</span>
-			<p>Some text in the Modal..
-
+			<h2>DODAJ FILM</h2>
 
 			<form action="moviesAdd.php" method="post">
 
-				<h1>DODAJ FILM</h1>
-
-				<input type="text" placeholder="Link from idbm or correct name" name="moviename"/>
-
-				<input class="btn" value="Dodaj" type="submit"/>
+				<div style="text-align:center;">
+				<input type="text" placeholder="Link z IMDb lub poprawna nazwa" name="moviename" class="email"/>
+				</div>
+				<input class="btn3" value="Dodaj" type="submit"/>
 
 			</form>
 
-			</p>
 		</div>
 	</div>
 
