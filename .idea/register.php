@@ -43,7 +43,7 @@ if (isset($_POST['email'])) {
         $_SESSION['e_haslo'] = "Podane hasła nie są identyczne!";
     }
 
-    $haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
+    $haslo_hash = md5($haslo1);
 
     //Czy zaakceptowano regulamin?
     if (!isset($_POST['regulamin'])) {
@@ -51,8 +51,8 @@ if (isset($_POST['email'])) {
         $_SESSION['e_regulamin'] = "Potwierdź akceptację regulaminu!";
     }
 
-    //Bot or not? Oto jest pytanie!
-    $sekret = "6Lf5oDkUAAAAAOPVrSyvnxLvjJR9AE_pp6E9U2xv";
+
+    //$sekret = "6Lf5oDkUAAAAAOPVrSyvnxLvjJR9AE_pp6E9U2xv";
 
     $sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $sekret . '&response=' . $_POST['g-recaptcha-response']);
 

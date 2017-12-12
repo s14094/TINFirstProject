@@ -11,22 +11,19 @@ include("config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
 
+
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
     $mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
+    $var_haslo = $_POST['password'];
+    $var_hash = md5($var_haslo);
 
-    //need fix
-    $hash = password_hash('haslo', PASSWORD_DEFAULT);
-    $verify=password_verify($_POST["password"], $hash);
-
-
-    $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$mypassword'";
+    $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$var_hash'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $active = $row['active'];
 
     $count = mysqli_num_rows($result);
-
 
     // If result matched $myusername and $mypassword, table row must be 1 row
 
@@ -35,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['logged'] = true;
 
         echo '<script type="text/javascript">
-           window.location = "index.php"
-      </script>';
+           window.location = "index.php"</script>';
 
     } else {
         $_SESSION['logged'] = false;
-        $error = "Niepoprawny Login lub Hasło. '$verify' ";
+        $error = "Niepoprawny Login lub Hasło. " . $var_haslo . "  xxx   " . $hash_input;
     }
+
 }
 ?>
 

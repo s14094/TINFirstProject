@@ -32,7 +32,7 @@ include_once 'imdb.class.php';
 			<form action="moviesAdd.php" method="post">
 
 				<div style="text-align:center;">
-				<input type="text" placeholder="Link z IMDb lub poprawna nazwa" name="moviename" class="email"/>
+				<input type="text" placeholder="Link z IMDb lub poprawna nazwa" name="varname" class="email"/>
 				</div>
 				<input class="btn3" value="Dodaj" type="submit"/>
 

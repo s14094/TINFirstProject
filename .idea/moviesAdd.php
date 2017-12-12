@@ -26,10 +26,12 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
 
-$sql = "INSERT INTO testmovies (moviename, userid) VALUES ('XXXlink', '0')";
+$var_value = $_POST['varname'];
+
+$sql = "INSERT INTO testmovies (moviename, userid) VALUES ('$var_value', '0')";
 
 if ($db->query($sql) === TRUE) {
-    echo "New record created successfully ";
+    echo "Pomyślnie dodano film";
     echo "<form action='movies.php'><button class='btn'>ok</button></form>";
 } else {
     echo "Error: " . $sql . "<br>" . $db->error;
