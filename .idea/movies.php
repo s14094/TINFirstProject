@@ -63,10 +63,16 @@ include_once 'imdb.class.php';
 	<div id="myModal2" class="modal">
 		<div class="modal-content2">
 			<span class="close2">&times;</span>
-			<p>Some text in the Modal.. 22222
+			<h2>USUŃ FILM</h2>
 
+			<form action="moviesDelete.php" method="post">
 
-			</p>
+				<div style="text-align:center;">
+					<input type="text" placeholder="ID Filmu" name="varid" class="email"/>
+				</div>
+				<input class="btn3" value="Usuń" type="submit"/>
+
+			</form>
 		</div>
 	</div>
 

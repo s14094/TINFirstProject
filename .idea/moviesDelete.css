@@ -1,0 +1,28 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #3498db;
+	color: white;
+	font-size: large;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0px 20px 0px;
+}
+
+.btn {
+	text-align: center;
+	background: #fff;
+	width: 125px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #3498db;
+	border-radius: 6px;
+	border: black 4px solid;
+	margin:15px auto;
+	display:block;
+	font-weight: 800;
+	font-size: 0.8em;
+}
+
+.btn:hover {
+	color: black;
+}

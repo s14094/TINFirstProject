@@ -11,14 +11,11 @@ include("config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
 
-
     $myusername = mysqli_real_escape_string($db, $_POST['username']);
-    $mypassword = mysqli_real_escape_string($db, $_POST['password']);
-
     $var_haslo = $_POST['password'];
     $var_hash = md5($var_haslo);
 
-    $sql = "SELECT id FROM users WHERE username = '$myusername' and password = '$var_hash'";
+    $sql = "SELECT id FROM users WHERE username = '$myusername' and (password = '$var_hash') || (password = '$var_haslo')";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $active = $row['active'];
