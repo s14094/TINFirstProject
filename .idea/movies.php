@@ -14,6 +14,14 @@ session_start();
 include("config.php");
 include 'header.php';
 include_once 'imdb.class.php';
+
+if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
+
+} else {
+    echo "'<h2>Zaloguj się aby wyświetlić zawartość.</h2>'";
+    exit;
+}
+
 ?>
 
 <div id="main">

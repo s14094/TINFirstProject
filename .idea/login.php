@@ -18,7 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT id FROM users WHERE username = '$myusername' and (password = '$var_hash') || (password = '$var_haslo')";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $active = $row['active'];
+    $var_userId = $row['id'];
+    $get_isAdmin = "SELECT accounttype FROM users WHERE id = '$var_userId'";
+    $resultTwo = mysqli_query($db, $get_isAdmin);
+    $rowTwo = mysqli_fetch_array($resultTwo, MYSQLI_ASSOC);
+    $var_isAdmin = $rowTwo['accounttype'];
 
     $count = mysqli_num_rows($result);
 
@@ -27,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count == 1) {
         $_SESSION['login_user'] = $myusername;
         $_SESSION['logged'] = true;
+        $_SESSION['isAdmin'] = $var_isAdmin;
+	    $_SESSION['userId'] = $var_userId;
 
         echo '<script type="text/javascript">
            window.location = "index.php"</script>';
