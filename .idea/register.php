@@ -129,6 +129,8 @@ if (isset($_POST['email'])) {
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<link rel="stylesheet" href="register.css" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<style>

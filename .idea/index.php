@@ -9,6 +9,8 @@
 session_start();
 ?>
 
+<?php include 'header.php'; ?>
+
 
 <!doctype html>
 
@@ -23,8 +25,6 @@ session_start();
 <body>
 <header id="pageHeader"></header>
 
-<?php include 'header.php'; ?>
-
 <article id="mainArticle">Article</article>
 <nav id="mainNav">Nav
     <?php
@@ -33,8 +33,8 @@ session_start();
 
     ?>
 </nav>
-<div class="ads" id="siteAds, myImage">
-	<img src="http://www.ecstudents.net/10fall/kevinpost/archive/photoshop/gif_ads/9000th-winner-animated-2.gif" />
+<div class="ads" id="siteAds,myImage">
+	<img src="http://www.ecstudents.net/10fall/kevinpost/archive/photoshop/gif_ads/9000th-winner-animated-2.gif" alt="reklama" />
 </div>
 <footer id="pageFooter">Footer</footer>
 </body>

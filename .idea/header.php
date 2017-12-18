@@ -17,6 +17,8 @@ session_start();
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="header.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -35,17 +37,24 @@ session_start();
 		<a href="movies.php">Filmy</a>
 		<a href="series.php">Seriale</a>
 		<a href="login.php">
-		<?php
-        if ($_SESSION['logged'] == 1) {
-            echo $_SESSION['login_user'];
+            <?php
+            if ($_SESSION['logged'] == 1) {
+                echo $_SESSION['login_user'];
 
-        } elseif ($_SESSION['logged'] == 0)
-            echo '<span>Niezalogowano</span>';
-        else{
-            echo 'error';
-        }
-        ?>
-			</a>
+            } elseif ($_SESSION['logged'] == 0)
+                echo '<span>Niezalogowano</span>';
+            else {
+                echo 'error';
+            }
+            ?>
+		</a>
+		<a href="adminPanel.php">
+            <?php
+            if (($_SESSION['logged'] == 1) && ($_SESSION['isAdmin'] == 2)) {
+                echo '<span>Admin panel</span>';
+            }
+            ?>
+		</a>
 		<a><?php
             print_r($_SESSION);
             ?>

@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>PHP-IMDB-Grabber by Fabian Beiner | Example</title>
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
 	<link rel="stylesheet" type="text/css" href="movies.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
