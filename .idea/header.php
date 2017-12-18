@@ -39,7 +39,7 @@ session_start();
 		<a href="login.php">
             <?php
             if ($_SESSION['logged'] == 1) {
-                echo $_SESSION['login_user'];
+                echo "Zalogowano jako: " . $_SESSION['login_user'];
 
             } elseif ($_SESSION['logged'] == 0)
                 echo '<span>Niezalogowano</span>';

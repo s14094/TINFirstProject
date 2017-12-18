@@ -63,6 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="box">
 	<form action="" method="post">
 
+		<?php
+		if ($_SESSION['logged'] == 1) {
+			echo "Jesteś już zalogowany";
+            echo "<a href='logout.php' class='btnLogout' type='submit'/>Wyloguj</a>";
+        exit;
+		}
+	?>
+
 		<h1>LOGOWANIE</h1>
 
 		<input type="text" placeholder="nick" name="username" class="email"/>

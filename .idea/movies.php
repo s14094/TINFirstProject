@@ -29,7 +29,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 <div id="main">
 	<h1>FILMY</h1>
 	<div class="btn">
-		<a href='#' id="myBtn">+</a>
+		<a href='#' id="myBtn" class="tooltip">+<span class="tooltiptext">Dodaj film</span></a>
 	</div>
 
 	<div id="myModal" class="modal">
@@ -66,7 +66,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 	</script>
 
 	<div class="btn2">
-		<a href='#' id="myBtn2">-</a>
+		<a href='#' id="myBtn2" class="tooltip">-<span class="tooltiptext">Usuń film</span></a>
 	</div>
 
 	<!-- usun film !-->

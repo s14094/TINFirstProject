@@ -56,6 +56,26 @@ h1 {
 	background: #2CC06B;
 }
 
+.btnLogout {
+	background: red;
+	width: 125px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: black;
+	border-radius: 4px;
+	border: red 1px solid;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 80px;
+	font-weight: 800;
+	font-size: 0.8em;
+}
+
+.btnLogout:hover {
+	color: white;
+}
+
 #btn2 {
 	float: left;
 	background: #3498db;
