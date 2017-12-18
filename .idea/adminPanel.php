@@ -7,7 +7,11 @@
  */
 ?>
 
-<?php include 'header.php'; ?>
+<?php
+session_start();
+include("config.php");
+include 'header.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -41,7 +45,7 @@
 				<h5 class="mb-0">
 					<a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false"
 					   aria-controls="collapseOne">
-						Użytkownicy
+						Użytkownicy - id, username, password, email, accounttype
 					</a>
 				</h5>
 			</div>
@@ -52,10 +56,11 @@
 					<table class="table table-hover table-bordered table-striped table-dark">
 						<thead>
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">First Name</th>
-							<th scope="col">Last Name</th>
-							<th scope="col">Username</th>
+							<th scope="col" style="width: 100px;">#id</th>
+							<th scope="col">username</th>
+							<th scope="col">password</th>
+							<th scope="col">email</th>
+							<th scope="col" style="width: 100px;">accounttype</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -64,18 +69,29 @@
 							<td>Mark</td>
 							<td>Otto</td>
 							<td>@mdo</td>
+							<td>@mdo</td>
 						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td>Jacob</td>
-							<td>Thornton</td>
-							<td>@fat</td>
-						</tr>
-						<tr>
-							<th scope="row">3</th>
-							<td colspan="2">Larry the Bird</td>
-							<td>@twitter</td>
-						</tr>
+
+                        <?php
+                        // Check connection
+                        if ($db->connect_error) {
+                            die("Connection failed: " . $db->connect_error);
+                        }
+
+                        $sql = "SELECT id, firstname, lastname FROM MyGuests";
+                        $result = $db->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        $db->close();
+                        ?>
+
 						</tbody>
 					</table>
 				</div>
@@ -86,23 +102,39 @@
 				<h5 class="mb-0">
 					<a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false"
 					   aria-controls="collapseTwo">
-						Filmy
+						Filmy - movieId, moviename, userid
 					</a>
 				</h5>
 			</div>
 			<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo"
 			     data-parent="#accordion">
 				<div class="card-body">
-					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-					wolf
-					moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-					eiusmod.
-					Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-					shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
-					ea
-					proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw
-					denim
-					aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					<table class="table table-hover table-bordered table-striped table-dark">
+						<thead>
+						<tr>
+							<th scope="col" style="width: 100px;">#id</th>
+							<th scope="col">movie name / link</th>
+							<th scope="col" style="width: 100px;">user id</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td>Mark</td>
+							<td>Otto</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Jacob</td>
+							<td>Thornton</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>@mdo333</td>
+							<td>@mdo333</td>
+						</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
