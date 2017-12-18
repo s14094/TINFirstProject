@@ -26,8 +26,9 @@ if ($db->connect_error) {
 }
 
 $var_value = $_POST['varname'];
+$var_userId = $_SESSION['userId'];
 
-$sql = "INSERT INTO testmovies (moviename, userid) VALUES ('$var_value', '0')";
+$sql = "INSERT INTO testmovies (moviename, userid) VALUES ('$var_value', '$var_userId')";
 
 if ($db->query($sql) === TRUE) {
     echo "Pomyślnie dodano film";

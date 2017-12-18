@@ -115,7 +115,9 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
             die("Connection failed: " . $db->connect_error);
         }
 
-        $sql = "SELECT movieid, moviename, userid FROM testmovies";
+        $var_userId = $_SESSION['userId'];
+
+        $sql = "SELECT movieid, moviename, userid FROM testmovies WHERE userid = '$var_userId'";
         $result = $db->query($sql);
 
         if ($result->num_rows > 0) {
@@ -145,7 +147,7 @@ if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
             }
         } else {
-            echo "0 results";
+            echo "Twoja baza jest pusta, dodaj film :)";
         }
         //$db->close();
         ?>
