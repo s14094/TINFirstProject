@@ -64,34 +64,28 @@ include 'header.php';
 						</tr>
 						</thead>
 						<tbody>
-						<tr>
-							<th scope="row">1</th>
-							<td>Mark</td>
-							<td>Otto</td>
-							<td>@mdo</td>
-							<td>@mdo</td>
-						</tr>
 
                         <?php
                         // Check connection
                         if ($db->connect_error) {
                             die("Connection failed: " . $db->connect_error);
                         }
-
-                        $sql = "SELECT id, firstname, lastname FROM MyGuests";
+                        $sql = "SELECT id, username, password, email, accounttype FROM users";
                         $result = $db->query($sql);
 
                         if ($result->num_rows > 0) {
-                            // output data of each row
-                            while($row = $result->fetch_assoc()) {
-                                echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr><th scope='row'> " . $row["id"] . "</th>";
+                                echo "<td>" . $row["username"] . "</td>";
+                                echo "<td>" . $row["password"] . "</td>";
+                                echo "<td>" . $row["email"] . "</td>";
+                                echo "<td>" . $row["accounttype"] . "</td></tr> ";
                             }
                         } else {
-                            echo "0 results";
+                            echo "pusta baza";
                         }
                         $db->close();
                         ?>
-
 						</tbody>
 					</table>
 				</div>
