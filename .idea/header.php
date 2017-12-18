@@ -48,13 +48,12 @@ session_start();
             }
             ?>
 		</a>
-		<a href="adminPanel.php">
-            <?php
-            if (($_SESSION['logged'] == 1) && ($_SESSION['isAdmin'] == 2)) {
-                echo '<span>Admin panel</span>';
-            }
-            ?>
-		</a>
+        <?php
+        if (($_SESSION['logged'] == 1) && ($_SESSION['isAdmin'] == 2)) {
+            echo "<a href='adminPanel.php'><span>Admin panel</span></a>";
+        }
+        ?>
+
 		<a><?php
             print_r($_SESSION);
             ?>

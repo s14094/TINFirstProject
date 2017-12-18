@@ -19,7 +19,8 @@ include_once 'imdb.class.php';
 if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
 } else {
-    echo "'<h2>Zaloguj się aby wyświetlić zawartość.</h2>'";
+    echo "<h2>Zaloguj się aby wyświetlić zawartość.</h2>";
+    echo "<a href='login.php' class='btn3' type='submit'/>Logowanie</a>";
     exit;
 }
 

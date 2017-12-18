@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Created by IntelliJ IDEA.
@@ -6,20 +5,6 @@
  * Date: 20/11/2017
  * Time: 13:15
  */
-?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="login.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
-</head>
-
-<body>
-
-<?php
 session_start();
 include("config.php");
 
@@ -34,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $var_userId = $row['id'];
-
     $get_isAdmin = "SELECT accounttype FROM users WHERE id = '$var_userId'";
     $resultTwo = mysqli_query($db, $get_isAdmin);
     $rowTwo = mysqli_fetch_array($resultTwo, MYSQLI_ASSOC);
@@ -42,15 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $count = mysqli_num_rows($result);
 
+    // If result matched $myusername and $mypassword, table row must be 1 row
+
     if ($count == 1) {
         $_SESSION['login_user'] = $myusername;
         $_SESSION['logged'] = true;
         $_SESSION['isAdmin'] = $var_isAdmin;
-	    $_SESSION['userId'] = $var_userId;
-        echo '<script type="text/javascript">window.location = "index.php"</script>';
+        $_SESSION['userId'] = $var_userId;
+
+        echo '<script type="text/javascript">
+           window.location = "index.php"</script>';
+
     } else {
         $_SESSION['logged'] = false;
-        $error = "Niepoprawny Login lub Hasło.";
+        $error = "Niepoprawny Login lub Hasło. " . $var_haslo . "  xxx   " . $hash_input;
     }
 
 }
@@ -58,8 +47,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <?php include 'header.php'; ?>
 
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+
+
 <div class="box">
-	<form method="post">
+	<form action="" method="post">
 
 		<h1>LOGOWANIE</h1>
 
