@@ -16,6 +16,7 @@ include("config.php");
 include 'header.php';
 include_once 'imdb.class.php';
 
+
 if (isset($_SESSION['logged']) && $_SESSION['logged'] == true) {
 
 } else {
